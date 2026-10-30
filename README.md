@@ -6,11 +6,26 @@
 
 [![Status](https://img.shields.io/badge/status-active%20development-6d5dfc)](https://github.com/h8hyf2rw9y-afk/StateAI-Overview)
 [![Source](https://img.shields.io/badge/source-private-24292f)](https://github.com/h8hyf2rw9y-afk/StateAI-Overview)
-[![Live Product](https://img.shields.io/badge/live%20product-open-10b981)](https://state-ai-frontend.vercel.app/)\n[![Portfolio](https://img.shields.io/badge/portfolio-view-0ea5e9)](https://h8hyf2rw9y-afk.github.io/Portfolio/)
+[![Live Product](https://img.shields.io/badge/live%20product-open-10b981)](https://state-ai-frontend.vercel.app/)
+[![Portfolio](https://img.shields.io/badge/portfolio-view-0ea5e9)](https://h8hyf2rw9y-afk.github.io/Portfolio/)
 
-The public product is available at **[state-ai-frontend.vercel.app](https://state-ai-frontend.vercel.app/)**.\n\nPropPilot is an AI-first CRM for real-estate advisors and acquisition teams. It turns fragmented conversations, property information, documents, debts, tasks, and negotiations into a structured operating workflow.
+The public product is available at **[state-ai-frontend.vercel.app](https://state-ai-frontend.vercel.app/)**.
+
+PropPilot is an AI-first CRM for real-estate advisors and acquisition teams. It turns fragmented conversations, property information, documents, debts, tasks, and negotiations into a structured operating workflow.
 
 This repository is a **sanitized public product and engineering case study**. The application source, prompts, credentials, schemas, and client data remain private.
+
+## Product in motion
+
+<a href="https://state-ai-frontend.vercel.app/">
+  <img src="./assets/propilot-commercial-preview.gif" alt="PropPilot commercial preview showing the real-estate acquisition workflow" width="100%" />
+</a>
+
+<p align="center">
+  <strong><a href="https://state-ai-frontend.vercel.app/">Open the live PropPilot product →</a></strong>
+</p>
+
+This short sequence comes from the product commercial and shows how PropPilot turns an incomplete property file into an actionable workflow. The public experience uses presentation data; production source code and customer information remain private.
 
 ## Why I built it
 
