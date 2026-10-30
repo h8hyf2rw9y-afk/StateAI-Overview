@@ -6,9 +6,9 @@
 
 [![Status](https://img.shields.io/badge/status-active%20development-6d5dfc)](https://github.com/h8hyf2rw9y-afk/StateAI-Overview)
 [![Source](https://img.shields.io/badge/source-private-24292f)](https://github.com/h8hyf2rw9y-afk/StateAI-Overview)
-[![Portfolio](https://img.shields.io/badge/live%20portfolio-view-0ea5e9)](https://h8hyf2rw9y-afk.github.io/Portfolio/)
+[![Live Product](https://img.shields.io/badge/live%20product-open-10b981)](https://state-ai-frontend.vercel.app/)\n[![Portfolio](https://img.shields.io/badge/portfolio-view-0ea5e9)](https://h8hyf2rw9y-afk.github.io/Portfolio/)
 
-PropPilot is an AI-first CRM for real-estate advisors and acquisition teams. It turns fragmented conversations, property information, documents, debts, tasks, and negotiations into a structured operating workflow.
+The public product is available at **[state-ai-frontend.vercel.app](https://state-ai-frontend.vercel.app/)**.\n\nPropPilot is an AI-first CRM for real-estate advisors and acquisition teams. It turns fragmented conversations, property information, documents, debts, tasks, and negotiations into a structured operating workflow.
 
 This repository is a **sanitized public product and engineering case study**. The application source, prompts, credentials, schemas, and client data remain private.
 
