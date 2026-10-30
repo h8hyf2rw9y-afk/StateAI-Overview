@@ -1,68 +1,136 @@
-# StateAI
+# PropPilot · StateAI
 
-### Operación inmobiliaria organizada, de la primera conversación al seguimiento de cada oportunidad.
+<p align="left">
+  <strong>AI-first real-estate operations, built from real customer and workflow problems.</strong>
+</p>
 
-**StateAI** es un CRM inmobiliario en desarrollo que centraliza prospectos, propiedades, expedientes y actividades comerciales. Nace de necesidades reales del trabajo de asesores y equipos de adquisición: convertir información dispersa en un proceso claro y consultable.
+[![Status](https://img.shields.io/badge/status-active%20development-6d5dfc)](https://github.com/h8hyf2rw9y-afk/StateAI-Overview)
+[![Source](https://img.shields.io/badge/source-private-24292f)](https://github.com/h8hyf2rw9y-afk/StateAI-Overview)
+[![Portfolio](https://img.shields.io/badge/live%20portfolio-view-0ea5e9)](https://h8hyf2rw9y-afk.github.io/Portfolio/)
 
-> Este repositorio es una presentación pública del producto. El código fuente y la implementación se mantienen en repositorios privados.
+PropPilot is an AI-first CRM for real-estate advisors and acquisition teams. It turns fragmented conversations, property information, documents, debts, tasks, and negotiations into a structured operating workflow.
 
-## ¿Qué problema atiende?
+This repository is a **sanitized public product and engineering case study**. The application source, prompts, credentials, schemas, and client data remain private.
 
-En una operación inmobiliaria, la información suele quedar repartida entre conversaciones de WhatsApp, notas y hojas de cálculo. Eso dificulta saber qué se habló con un propietario, qué información falta y cuál es el siguiente paso.
+## Why I built it
 
-StateAI busca reducir esa dispersión y facilitar la continuidad del seguimiento, especialmente cuando un equipo administra varias oportunidades al mismo tiempo.
+Real-estate work rarely begins with a clean specification. Context is distributed across WhatsApp messages, calls, notes, spreadsheets, documents, and the memory of individual advisors.
 
-## ¿Para quién está pensado?
+I started PropPilot from direct exposure to those workflows. The product challenge was not simply to build another CRM; it was to translate ambiguous operational problems into a system that people could actually use while protecting sensitive customer information.
 
-- **Asesores inmobiliarios:** organizar contactos, propiedades y oportunidades comerciales.
-- **Equipos de adquisición:** dar seguimiento a propietarios y posibles compras de vivienda.
-- **Coordinadores de operación:** consultar el estado de los casos y los pendientes del equipo.
+## My role
 
-## ¿Qué soluciona?
+**Independent / lead project — Emiliano González Romo**
 
-| Necesidad | Enfoque de StateAI |
+- Customer and workflow discovery from real-estate operations.
+- Product definition, prioritization, and domain modeling.
+- Frontend and backend architecture.
+- API, authentication, and data-model design.
+- Applied-AI workflow design with human confirmation.
+- Testing, debugging, documentation, version control, and CI/CD.
+- Iteration around feedback and real operational constraints.
+
+## What the product organizes
+
+| Operational area | Product approach |
 | --- | --- |
-| Información dispersa de un prospecto | Un expediente con contexto y notas de seguimiento |
-| Poca claridad sobre el avance de una oportunidad | Seguimiento por etapas del proceso comercial |
-| Datos incompletos al evaluar una propiedad | Organización de características, situación documental y adeudos registrados |
-| Tiempo invertido en buscar información | Consultas y filtros, incluyendo asistencia conversacional de lectura |
-| Pérdida de contexto entre interacciones | Historial y actividades vinculadas a la operación |
+| Leads and contacts | Shared customer context and role-based records |
+| Properties | Characteristics, documentation, status, and related parties |
+| Acquisition cases | Structured case files for ownership, property condition, debts, and offers |
+| Opportunities | Stage-based commercial pipeline |
+| Follow-up | Tasks, appointments, activities, and notifications |
+| Knowledge retrieval | Conversational summaries and filters over authorized CRM context |
+| AI-assisted actions | Recommendations and controlled actions with human review |
 
-## Funciones principales
+### Property-acquisition workflow
 
-- Gestión de contactos, propiedades y oportunidades.
-- Expedientes para concentrar información relevante de cada caso.
-- Notas rápidas para registrar el contexto de las conversaciones.
-- Seguimiento por etapas y organización de casos activos y archivados.
-- Gestión de tareas, citas y actividades comerciales.
-- Asistencia de IA para consultar y resumir información registrada.
+```mermaid
+flowchart LR
+    A[New] --> B[Offer preparation]
+    B --> C[Offer sent]
+    C --> D[Negotiating]
+    D --> E[Accepted]
+    E --> F[Purchased]
+```
 
-### Adquisición de vivienda
+Rejected and cancelled cases are kept outside the active sales flow so the working pipeline stays focused.
 
-El módulo de adquisición organiza el seguimiento desde la llegada de un prospecto hasta la negociación y compra. Permite reunir información del propietario, características de la vivienda, situación documental, adeudos y notas dentro del mismo contexto operativo.
+## Architecture
 
-La asistencia conversacional de este módulo está enfocada en **lectura, resúmenes y filtros**. No se presenta como un sistema que cierre operaciones o modifique expedientes de forma autónoma.
+```mermaid
+flowchart TD
+    U[Advisor or operations user] --> W[Next.js + TypeScript]
+    W --> API[FastAPI REST API]
+    API --> S[Service layer]
+    S --> R[Repository layer]
+    R --> DB[(PostgreSQL / Supabase)]
+    API --> AUTH[Supabase Auth + JWT]
+    S --> AI[Human-controlled AI workflows]
+    AI --> DB
+```
 
-## Un ejemplo de uso
+| Layer | Main technologies |
+| --- | --- |
+| Web application | Next.js, React, TypeScript |
+| API and domain logic | FastAPI, Python, Pydantic v2 |
+| Persistence | PostgreSQL, Supabase, SQLAlchemy 2.0 |
+| Database evolution | Alembic migrations |
+| Authentication | Supabase Auth, JWT |
+| Delivery practices | Git, GitHub, GitHub Actions, automated testing |
+| Applied AI | Structured extraction, contextual retrieval, recommendations, human-in-the-loop actions |
 
-1. Un asesor recibe el contacto de un propietario interesado en vender.
-2. Registra el caso y las notas de la conversación.
-3. Completa la información de la vivienda y los datos necesarios para su revisión.
-4. Da seguimiento a la propuesta y a la negociación mediante las etapas del proceso.
-5. Consulta el expediente y retoma la conversación con el contexto disponible.
+The backend follows a **Route → Service → Repository** separation to keep transport, business rules, and persistence concerns explicit.
 
-## Ingeniería y producto
+## Applied AI — with operational boundaries
 
-Desarrollado por **Emiliano González Romo**, con un enfoque que combina desarrollo de software y experiencia en operación inmobiliaria.
+PropPilot explores AI where it can reduce search and coordination work:
 
-**Tecnologías principales:** Next.js, TypeScript, FastAPI, Supabase y PostgreSQL.
+- Conversational retrieval over leads and case files.
+- Context summaries and operational filters.
+- Structured extraction from quick notes.
+- Follow-up recommendations.
+- Detection of overdue and upcoming activity.
+- Creation of tasks, activities, or notifications through controlled workflows.
 
-El proyecto integra desarrollo de interfaces, servicios de backend, persistencia de datos y asistencia de IA aplicada a flujos de trabajo inmobiliarios. Este repositorio documenta el producto a nivel general; no incluye esquemas internos, prompts, credenciales, datos de clientes ni código de la aplicación.
+The product does **not** present AI as an autonomous closer. Actions that affect operational records are designed around user review or confirmation.
 
-## Estado del proyecto
+## Security and privacy
 
-**En desarrollo activo.** Las capacidades evolucionan conforme se validan necesidades de la operación. Esta presentación describe el alcance general y no constituye una promesa de disponibilidad comercial de cada función.
+Real-estate records may contain highly sensitive personal and financial information. The project therefore treats privacy as a product requirement:
 
-## Código y uso
+- Explicit allowlists for fields that may be processed by an LLM.
+- Explicit exclusions for fields that must never be sent to an LLM.
+- Pydantic validation at API boundaries.
+- Authentication and role-aware access patterns.
+- Environment-based configuration and no committed credentials.
+- Sanitized public documentation with no client names or records.
 
-StateAI es un proyecto de código privado. La publicación de esta presentación no concede una licencia sobre el software ni acceso a su implementación.
+## Engineering approach
+
+The project is developed through small, reviewable increments:
+
+1. Observe an operational problem.
+2. Translate it into a workflow and acceptance criteria.
+3. Model the affected domain and data.
+4. Implement across frontend, API, and persistence.
+5. Test and debug the complete flow.
+6. Validate the behavior against the original operational need.
+7. Document decisions and deploy through version-controlled workflows.
+
+This is the kind of work I want to continue doing as a **Forward Deployed / AI Solutions Engineer**: working close to users, understanding an unclear problem, and carrying a practical solution from discovery into implementation.
+
+## Current status
+
+**Active development.** Capabilities evolve as workflows are validated. This overview describes the product direction and verified engineering scope; it is not a claim that every feature is commercially available.
+
+## Public links
+
+- [Live portfolio](https://h8hyf2rw9y-afk.github.io/Portfolio/)
+- [Primary GitHub profile](https://github.com/h8hyf2rw9y-afk)
+- [LinkedIn](https://www.linkedin.com/in/emiliano-gonzalez-tech/)
+
+---
+
+### Resumen en español
+
+PropPilot es un CRM AI-first construido desde problemas reales de operación inmobiliaria. Centraliza prospectos, propiedades, expedientes, oportunidades y seguimiento, e incorpora asistencia de IA con límites claros, protección de datos y control humano. El código y los datos se mantienen privados; este repositorio presenta públicamente el problema, mi contribución, la arquitectura y las decisiones de ingeniería.
