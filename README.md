@@ -1,10 +1,10 @@
-# PropPilot · StateAI
+# PropPilot · Oniria
 
 <p align="left">
   <strong>AI-first real-estate operations, built from real customer and workflow problems.</strong>
 </p>
 
-[![Status](https://img.shields.io/badge/status-active%20development-6d5dfc)](https://github.com/h8hyf2rw9y-afk/StateAI-Overview)
+[![Status](https://img.shields.io/badge/status-operating%20in%20Crestify-6d5dfc)](https://github.com/h8hyf2rw9y-afk/StateAI-Overview)
 [![Source](https://img.shields.io/badge/source-private-24292f)](https://github.com/h8hyf2rw9y-afk/StateAI-Overview)
 [![Live Product](https://img.shields.io/badge/live%20product-open-10b981)](https://state-ai-frontend.vercel.app/)
 [![Portfolio](https://img.shields.io/badge/portfolio-view-0ea5e9)](https://h8hyf2rw9y-afk.github.io/Portfolio/)
@@ -35,7 +35,7 @@ I started PropPilot from direct exposure to those workflows. The product challen
 
 ## My role
 
-**Independent / lead project — Emiliano González Romo**
+**Oniria product · Founder and lead engineer — Emiliano González Romo**
 
 - Customer and workflow discovery from real-estate operations.
 - Product definition, prioritization, and domain modeling.
@@ -136,7 +136,7 @@ This is the kind of work I want to continue doing as a **Forward Deployed / AI S
 
 ## Current status
 
-**Active development.** Capabilities evolve as workflows are validated. This overview describes the product direction and verified engineering scope; it is not a claim that every feature is commercially available.
+**Operating inside Crestify.** PropPilot is a completed working system used in a real-estate operation. The current product centralizes acquisition cases, property and debt context, proposals, follow-up, permissions, and controlled AI assistance. Oniria is now preparing the architecture, configuration boundaries, onboarding, and deployment process required to expand PropPilot to additional real-estate companies.
 
 ## Public links
 
@@ -148,4 +148,4 @@ This is the kind of work I want to continue doing as a **Forward Deployed / AI S
 
 ### Resumen en español
 
-PropPilot es un CRM AI-first construido desde problemas reales de operación inmobiliaria. Centraliza prospectos, propiedades, expedientes, oportunidades y seguimiento, e incorpora asistencia de IA con límites claros, protección de datos y control humano. El código y los datos se mantienen privados; este repositorio presenta públicamente el problema, mi contribución, la arquitectura y las decisiones de ingeniería.
+PropPilot es el producto inmobiliario de Oniria, construido desde problemas reales de operación y actualmente utilizado dentro de Crestify. Centraliza prospectos, propiedades, expedientes, oportunidades y seguimiento, e incorpora asistencia de IA con límites claros, protección de datos y control humano. El código y los datos se mantienen privados; este repositorio presenta públicamente el problema, mi contribución, la arquitectura y las decisiones de ingeniería.
